@@ -1,16 +1,24 @@
 ---
 
 - name: Installing apt-key
-  apt_key: id="F76221572C52609D" url=https://apt.dockerproject.org/gpg state=present
+  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
 
 - name: Add deb repository
-  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main' state=present
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    update_cache: no
 
-- name: Install
-  apt: pkg="{{ item }}" state=latest update_cache=yes
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+
+- name: Install docker
+  apt: pkg="{{ item }}" state=present
   with_items:
-    - linux-image-extra-virtual
-    - docker-engine
+    - docker-ce 
+    - docker-ce-cli 
+    - containerd.io
 
 - name: Create Docker group
   group: name=docker state=present

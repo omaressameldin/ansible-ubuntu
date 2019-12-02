@@ -18,7 +18,6 @@
     - sox # to play sounds
     - tilda # lighter than guake
     - ubuntu-restricted-extras # MP3, Microsoft fonts, Flash plugin, LAME and DVD playback
-    - unetbootin # create bootable USB drives
     - vlc
     - wmctrl # to control windows
     - xclip # to manipulate the clipboard

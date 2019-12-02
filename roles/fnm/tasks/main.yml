@@ -1,0 +1,11 @@
+- name: nvm
+  shell: curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash -s -- --install-dir "{{ ansible_env.HOME }}/.fnm"
+
+- name: set permissions
+  shell: sudo chown -R {{ ansible_env.USER }} {{ ansible_env.HOME }}/.fnm
+
+- name: add to bashrc
+  shell: echo 'alias fnm={{ ansible_env.HOME }}/.fnm/fnm' >> {{ ansible_env.HOME }}/.bashrc
+
+- name: make global
+  shell: echo 'eval "`fnm env --multi`"' >> {{ ansible_env.HOME }}/.bashrc

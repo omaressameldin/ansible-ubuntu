@@ -1,0 +1,3 @@
+---
+- name: Install gmail
+  shell: sudo snap install gmail-desktop

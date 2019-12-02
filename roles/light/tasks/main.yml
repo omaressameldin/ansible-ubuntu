@@ -1,0 +1,8 @@
+---
+- name: clone light
+  shell: git clone https://github.com/haikarainen/light.git {{ ansible_env.HOME }}/light
+
+- name: make
+  shell: cd {{ ansible_env.HOME }}/light && ./autogen.sh && ./configure && make && sudo make install
+
+

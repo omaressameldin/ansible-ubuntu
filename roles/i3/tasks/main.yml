@@ -1,0 +1,15 @@
+- name: Install i3
+  apt: pkg="{{ item }}" state=present
+  with_items:
+    - i3-wm
+    - i3status
+    - i3blocks
+    - i3lock
+    - suckless-tools
+    - libconfuse-dev
+    - libyajl-dev
+    - libasound2-dev
+    - libiw-dev
+    - asciidoc
+    - libpulse-dev
+    - libnl-genl-3-dev

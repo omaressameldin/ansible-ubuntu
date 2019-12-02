@@ -1,0 +1,2 @@
+- name: Install font awesome
+  apt: pkg=fonts-font-awesome state=present

@@ -1,0 +1,9 @@
+- name: make bin folder
+  shell: mkdir -p {{ ansible_env.HOME }}/bin
+- name: Download wifi-manager
+  get_url:
+    url: https://github.com/omaressameldin/wifi-manager/releases/download/1.0/wifi-manager
+    dest: "{{ ansible_env.HOME }}/bin/wifi-manager"
+
+- name: make wifi-manager executable
+  shell: chmod +x {{ ansible_env.HOME }}/bin/wifi-manager
