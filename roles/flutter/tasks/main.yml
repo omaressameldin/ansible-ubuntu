@@ -1,0 +1,29 @@
+# - name: Download flutter source
+#   get_url:
+#     url: https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+#     dest: "{{ ansible_env.HOME }}/Downloads/"
+
+# - name: extract flutter
+#   shell: cd {{ ansible_env.HOME }} && tar xf {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+
+# - name: delete source
+#   shell: rm {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+
+# - name: upgrade flutter
+#   shell: flutter upgrade --force
+
+
+# - name: create android cfg
+#   shell: touch {{ ansible_env.HOME }}/.android/repositories.cfg
+
+- name: set permissions
+  shell: sudo chown {{ ansible_env.USER }}:{{ ansible_env.USER }} $ANDROID_HOME -R
+
+- name: update sdk
+  shell: yes | /opt/android-sdk-linux/tools/bin/sdkmanager --update
+
+- name: install platform-tools
+  shell: /opt/android-sdk-linux/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
+
+- name: accept licenses
+  shell: yes | flutter doctor --android-licenses

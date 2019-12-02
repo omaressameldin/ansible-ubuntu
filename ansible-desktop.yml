@@ -11,6 +11,9 @@
     - { role: light, tags: light }
     - { role: gmail, tags: gmail }
     - { role: wifi-manager, tags: wifi-manager }
+    - { role: java-openjdk, tags: java }
+    - { role: nickpack.android_sdk, tags: android }
+    - { role: flutter, tags: flutter }
     - { role: vscode, become: true }
     - { role: fnm, become: true }
     # Desktop roles
