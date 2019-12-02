@@ -27,4 +27,4 @@
     - { role: whatsdesk, become: true }
     - { role: slack, become: true }
     - { role: caprine, become: true }
-    - { role: i3, become: true }
+    - { role: i3, become: true, tags: i3 }

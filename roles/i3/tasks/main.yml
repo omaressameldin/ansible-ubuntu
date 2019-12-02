@@ -13,3 +13,6 @@
     - asciidoc
     - libpulse-dev
     - libnl-genl-3-dev
+
+- name: Install i3 lock fancy
+  shell: cd roles/i3/i3lock-fancy && sudo make install
