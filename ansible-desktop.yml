@@ -24,6 +24,7 @@
     - { role: gimp, become: true }
     - { role: rofi, become: true, tags: rofi }
     - { role: spotify, become: true }
+    - { role: google-music, become: true, tags: google-music }
     - { role: whatsdesk, become: true }
     - { role: slack, become: true }
     - { role: caprine, become: true }

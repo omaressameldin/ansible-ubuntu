@@ -1,20 +1,20 @@
-# - name: Download flutter source
-#   get_url:
-#     url: https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
-#     dest: "{{ ansible_env.HOME }}/Downloads/"
+- name: Download flutter source
+  get_url:
+    url: https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+    dest: "{{ ansible_env.HOME }}/Downloads/"
 
-# - name: extract flutter
-#   shell: cd {{ ansible_env.HOME }} && tar xf {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+- name: extract flutter
+  shell: cd {{ ansible_env.HOME }} && tar xf {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
 
-# - name: delete source
-#   shell: rm {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
+- name: delete source
+  shell: rm {{ ansible_env.HOME }}/Downloads/flutter_linux_v1.9.1+hotfix.6-stable.tar.xz
 
-# - name: upgrade flutter
-#   shell: flutter upgrade --force
+- name: upgrade flutter
+  shell: flutter upgrade --force
 
 
-# - name: create android cfg
-#   shell: touch {{ ansible_env.HOME }}/.android/repositories.cfg
+- name: create android cfg
+  shell: touch {{ ansible_env.HOME }}/.android/repositories.cfg
 
 - name: set permissions
   shell: sudo chown {{ ansible_env.USER }}:{{ ansible_env.USER }} $ANDROID_HOME -R
