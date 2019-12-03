@@ -16,8 +16,8 @@
 - name: Install docker
   apt: pkg="{{ item }}" state=present
   with_items:
-    - docker-ce 
-    - docker-ce-cli 
+    - docker-ce
+    - docker-ce-cli
     - containerd.io
 
 - name: Create Docker group
@@ -30,4 +30,4 @@
   service: name=docker state={{ docker.start | ternary('restarted','stopped') }} enabled={{ docker.service_enabled }}
 
 - name: Install docker-compose
-  get_url: url="https://github.com/docker/compose/releases/download/1.9.0/docker-compose-Linux-x86_64" dest=/usr/local/bin/docker-compose force=no mode=0755
+  get_url: url="https://github.com/docker/compose/releases/download/1.25.0/docker-compose-Linux-x86_64" dest=/usr/local/bin/docker-compose force=no mode=0755

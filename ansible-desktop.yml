@@ -5,7 +5,7 @@
   roles:
     # Common roles
     - { role: common, become: true }
-    - { role: docker, become: true }
+    - { role: docker, become: true, tags: docker }
     - { role: rvm.ruby, tags: rvm, rvm1_rubies: [], rvm1_user: '{{ ansible_env.USER }}'}
     - { role: go, tags: go }
     - { role: light, tags: light }
