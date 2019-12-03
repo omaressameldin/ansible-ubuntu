@@ -16,6 +16,7 @@
     - { role: flutter, tags: flutter }
     - { role: vscode, become: true }
     - { role: fnm, become: true }
+    - { role: yarn, become: true, tags: yarn }
     # Desktop roles
     - { role: desktop, become: true }
     - { role: fontawesome, become: true }
