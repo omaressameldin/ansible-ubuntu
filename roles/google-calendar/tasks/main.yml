@@ -1,0 +1,10 @@
+---
+
+- name: add nuvola repo
+  shell: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo
+
+- name: update flatpak
+  shell: flatpak update
+
+- name: Install google calendar
+  shell: flatpak install -y nuvola eu.tiliado.NuvolaAppGoogleCalendar

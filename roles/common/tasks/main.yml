@@ -45,6 +45,7 @@
    - make
    - nano
    - gpick
+   - flatpak
   #  - nfs-common
   #  - nmap
   #  - openssl

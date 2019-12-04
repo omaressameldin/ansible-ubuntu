@@ -4,7 +4,7 @@
   hosts: localhost
   roles:
     # Common roles
-    - { role: common, become: true }
+    - { role: common, become: true, tags: common }
     - { role: docker, become: true, tags: docker }
     - { role: rvm.ruby, tags: rvm, rvm1_rubies: [], rvm1_user: '{{ ansible_env.USER }}'}
     - { role: go, tags: go }
@@ -26,6 +26,7 @@
     - { role: rofi, become: true, tags: rofi }
     - { role: spotify, become: true }
     - { role: google-music, become: true, tags: google-music }
+    - { role: google-calendar, become: true, tags: google-calendar }
     - { role: whatsdesk, become: true }
     - { role: slack, become: true }
     - { role: caprine, become: true }
