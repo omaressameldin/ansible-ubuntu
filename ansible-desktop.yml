@@ -29,5 +29,6 @@
     - { role: google-calendar, become: true, tags: google-calendar }
     - { role: whatsdesk, become: true }
     - { role: slack, become: true }
+    - { role: insomnia, become: true, tags: insomnia }
     - { role: caprine, become: true }
     - { role: i3, become: true, tags: i3 }
