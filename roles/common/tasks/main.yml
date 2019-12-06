@@ -23,6 +23,7 @@
    # - build-essential
    # - bzip2
    # - colortest
+   - bluez-tools
    - feh
    - curl
    # - diffutils
