@@ -26,6 +26,12 @@
    - bluez-tools
    - feh
    - curl
+   - tlp
+   - tp-smapi-dkms
+   - acpi-call-dkms
+   - uswsusp
+   - postgresql-client-common
+   - postgresql-client
    # - diffutils
    # - dos2unix
    # - fdupes
