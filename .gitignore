@@ -1,2 +1,12 @@
 *.retry
 group_vars/_*.yml
+*.source
+*.log
+dotfiles/.config/Gmail*Desktop
+dotfiles/.config/google-calendar
+dotfiles/.config/google-calendar
+dotfiles/.config/Code
+dotfiles/.config/Outlook*for*Outlook.com
+dotfiles/.config/Slack
+dotfiles/.config/Microsoft/Microsoft*Teams
+dotfiles/.config/microsoft-edge-dev

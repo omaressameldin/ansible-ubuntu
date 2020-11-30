@@ -93,7 +93,7 @@ export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/flutter/bin"
 export ANDROID_HOME=/opt/android-sdk-linux
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools:$ANDROID_HOME/platform-tools:$PATH:$ANDROID_HOME/cmdline-tools/tools"
 # some more ls aliases
 alias ll='ls -l'
 #alias la='ls -A'
@@ -101,7 +101,7 @@ alias l='ls -CF'
 
 alias mine='sudo chown -R $USER'
 alias clip='xclip -selection clipboard'
-alias screenshot="scrot -e 'mv $f ~/Pictures/$f' -s"
+alias screenshot="flameshot gui"
 bind -x '"\C-k":clear && printf "\e[3J"'
 
 # settings alias
@@ -161,6 +161,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+alias get_class="xprop | grep WM_CLASS | awk '{ print $4 }'"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -187,3 +189,6 @@ eval "`fnm env --multi`"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "/home/omaressameldin/.gvm/scripts/gvm" ]] && source "/home/omaressameldin/.gvm/scripts/gvm"
+alias fnm=/home/omaressameldin/.fnm/fnm
+eval "`fnm env --multi`"
+source ~/.bash_completion/alacritty

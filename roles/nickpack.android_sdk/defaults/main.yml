@@ -5,20 +5,20 @@ android_sdk_download_location: http://dl.google.com/android/android-sdk_r24.4.1-
 android_sdk_install_location: /opt
 
 ubuntu_dependency_packages:
-  - "libncurses5:i386"
-  - "libstdc++6:i386"
-  - "zlib1g:i386"
-  - "imagemagick"
-  - "expect"
-  - "gradle"
-  - "ant"
-  - "ccache"
-  - "autoconf"
-  - "automake"
-  - "ant"
-  - "ccache"
-  - "python-dev"
-  - "zlibc"
+  # - "libncurses5:i386"
+  # - "libstdc++6:i386"
+  # - "zlib1g:i386"
+  # - "imagemagick"
+  # - "expect"
+  # - "gradle"
+  # - "ant"
+  # - "ccache"
+  # - "autoconf"
+  # - "automake"
+  # - "ant"
+  # - "ccache"
+  # - "python-dev"
+  # - "zlibc"
 
 ubuntu_precise_dependency_packages:
   - "libgd2-xpm"
@@ -46,9 +46,6 @@ android_sdk_tools_to_install:
       - extra-google-m2repository
       - extra-android-m2repository
 android_sdks_to_install:
-      - android-21
-      - android-20
-      - android-19
-      - android-18
-      - android-17
-      - android-16
+      - android-30
+      - android-29    
+

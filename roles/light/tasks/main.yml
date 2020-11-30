@@ -6,3 +6,7 @@
   shell: cd {{ ansible_env.HOME }}/light && ./autogen.sh && ./configure && make && sudo make install
 
 
+- name: set-permissions
+  shell: sudo usermod -a -G video $LOGNAME
+
+

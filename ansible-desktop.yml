@@ -4,31 +4,31 @@
   hosts: localhost
   roles:
     # Common roles
-    - { role: common, become: true, tags: common }
-    - { role: docker, become: true, tags: docker }
-    - { role: rvm.ruby, tags: rvm, rvm1_rubies: [], rvm1_user: '{{ ansible_env.USER }}'}
-    - { role: go, tags: go }
-    - { role: light, tags: light }
-    - { role: gmail, tags: gmail }
-    - { role: wifi-manager, tags: wifi-manager }
-    - { role: java-openjdk, tags: java }
-    - { role: nickpack.android_sdk, tags: android }
+    #- { role: common, become: true, tags: common }
+    #- { role: docker, become: true, tags: docker }
+    # - { role: rvm.ruby, tags: rvm, rvm1_rubies: [], rvm1_user: '{{ ansible_env.USER }}'}
+    # - { role: go, tags: go }
+    # - { role: light, tags: light }
+    # - { role: gmail, tags: gmail }
+    # - { role: wifi-manager, tags: wifi-manager }
+    # - { role: java-openjdk, tags: java }
+    #- { role: nickpack.android_sdk, tags: android }
     - { role: flutter, tags: flutter }
-    - { role: vscode, become: true }
-    - { role: fnm, become: true }
-    - { role: yarn, become: true, tags: yarn }
+    #- { role: vscode, become: true }
+    #- { role: fnm, become: true }
+    #- { role: yarn, become: true, tags: yarn }
     # Desktop roles
-    - { role: desktop, become: true }
-    - { role: fontawesome, become: true }
-    - { role: chromium, become: true }
-    - { role: compton, become: true, tags: compton }
-    - { role: gimp, become: true }
-    - { role: rofi, become: true, tags: rofi }
-    - { role: spotify, become: true }
-    - { role: google-music, become: true, tags: google-music }
-    - { role: google-calendar, become: true, tags: google-calendar }
-    - { role: whatsdesk, become: true }
-    - { role: slack, become: true }
-    - { role: insomnia, become: true, tags: insomnia }
-    - { role: caprine, become: true }
-    - { role: i3, become: true, tags: i3 }
+    #- { role: desktop, become: true }
+    #- { role: fontawesome, become: true }
+    #- { role: chromium, become: true }
+    #- { role: compton, become: true, tags: compton }
+    #- { role: gimp, become: true }
+    #- { role: rofi, become: true, tags: rofi }
+    #- { role: spotify, become: true }
+    #- { role: google-music, become: true, tags: google-music }
+    #- { role: google-calendar, become: true, tags: google-calendar }
+    #- { role: whatsdesk, become: true }
+    #- { role: slack, become: true }
+    #- { role: insomnia, become: true, tags: insomnia }
+    #- { role: caprine, become: true }
+    #- { role: i3, become: true, tags: i3 }

@@ -29,7 +29,7 @@
    - tlp
    - tp-smapi-dkms
    - acpi-call-dkms
-   - uswsusp
+   # - uswsusp
    - postgresql-client-common
    - postgresql-client
    # - diffutils
@@ -41,6 +41,7 @@
    - git
    - grep
    - snapd
+   - flameshot
   #  - gzip
   #  - htop
   #  - httping
