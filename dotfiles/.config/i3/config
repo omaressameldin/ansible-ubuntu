@@ -31,7 +31,7 @@ focus_follows_mouse yes
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec /opt/alacritty/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,31 +98,30 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:  "
-set $ws2 "2:  "
-set $ws3 "3:   "
-set $ws4 "4: "
-set $ws5 "5:   "
-set $ws10 "10:  "
-set $ws6 "6:  "
-set $ws8 "8:  "
-set $ws9 "9:  "
-set $ws7 "7:  "
+set $ws1 "1:   "
+set $ws2 "2:   "
+set $ws3 "3: "
+set $ws4 "4:   "
+set $ws5 "5:  "
+set $ws6 "6:  "
+set $ws7 "7:  "
+set $ws8 "8:  "
+set $ws10 "10:   "
 
 # classes
-assign [class="Brave-browser"] $ws1
-assign [class="Chromium-browser"] $ws2
-assign [class="Code"] $ws3
-assign [class="Gnome-terminal"] $ws4
-assign [class="whatsdesk"] $ws5
-assign [class="Caprine"] $ws5
-assign [class="Slack"] $ws5
+assign [class="Chromium-browser"] $ws1
+assign [class="Code"] $ws2
+assign [class="Alacritty"] $ws3
+assign [class="whatsdesk"] $ws4
+assign [class="Caprine"] $ws4
+assign [class="Slack"] $ws4
 for_window [class="Spotify"] move to workspace $ws10
 for_window [class="Google Play Music Desktop Player"] move to workspace $ws10
-assign [class="outlook-for-linux"] $ws6
-assign [class="Gmail Desktop"] $ws6
-assign [class="Firefox"] $ws8
-assign [class="eu.tiliado.NuvolaAppGoogleCalendar"] $ws7
+assign [class="Outlook for Outlook.com"] $ws5
+assign [class="Gmail Desktop"] $ws5
+assign [class="Firefox"] $ws1
+assign [class="google-calendar"] $ws6
+assign [class="notion-desktop"] $ws7
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -196,8 +195,8 @@ set $inactive-bg-color    #2f343f70
 set $text-color           #f3f4f5
 set $inactive-text-color  #676E7D
 set $urgent-bg-color      #E53935
-set $bar-focused          #c39b4480
-set $active-bg            #c39b4440
+set $bar-focused          #33998980
+set $active-bg            #33998950
 
 # window colors
 #                       border              background         text                 indicator
@@ -247,7 +246,7 @@ bindcode $mod+9 exec rofi -show run
 # touchpad configs
 exec_always xinput set-prop 14 313 1
 exec_always xinput set-prop 14 321 1
-exec_always --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
+exec_always --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113 HorizScrollDelta=-100  HorizTwoFingerScroll=2
 #startup applications
 exec_always feh --bg-scale ~/Pictures/repeat.jpg
 exec_always xset s off
@@ -258,10 +257,11 @@ exec --no-startup-id dunst --config /home/omaressameldin/.config/dunst/dunstrc
 exec_always compton --config /home/omaressameldin/.config/compton.conf
 exec slack
 exec code
-exec gnome-terminal
-exec gnome-terminal
+exec /opt/alacritty/alacritty
+exec /opt/alacritty/alacritty
 exec whatsdesk
 exec chromium-browser
 exec google-play-music-desktop-player
-exec gmail-desktop
-exec flatpak run eu.tiliado.NuvolaAppGoogleCalendar
+exec pulseaudio --start
+exec google-calendar
+exec notion-desktop
