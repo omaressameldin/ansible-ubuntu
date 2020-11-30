@@ -265,3 +265,4 @@ exec google-play-music-desktop-player
 exec pulseaudio --start
 exec google-calendar
 exec notion-desktop
+exec parcellite

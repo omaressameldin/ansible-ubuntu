@@ -39,6 +39,7 @@
    # - gawk
    # - gcc
    - git
+   - parcellite
    - grep
    - snapd
    - flameshot
