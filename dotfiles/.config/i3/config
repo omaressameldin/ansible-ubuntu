@@ -266,3 +266,4 @@ exec pulseaudio --start
 exec google-calendar
 exec notion-desktop
 exec parcellite
+exec emote
