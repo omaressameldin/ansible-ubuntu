@@ -3,3 +3,5 @@
 - [Alacritty (terminal)](https://github.com/alacritty/alacritty)
 - [Google Calendar](https://github.com/klinker24/google-calendar-desktop)
 - [Notion](https://github.com/davidbailey00/notion-deb-builder/releases/tag/v2.0.6-windows)
+- [Gmail](https://github.com/timche/gmail-desktop)
+- [Github](https://github.com/shiftkey/desktop/releases)
