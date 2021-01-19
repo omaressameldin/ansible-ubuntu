@@ -25,6 +25,7 @@
    # - colortest
    - bluez-tools
    - feh
+   - bison
    - curl
    - tlp
    - tp-smapi-dkms

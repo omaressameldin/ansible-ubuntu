@@ -261,7 +261,7 @@ exec /opt/alacritty/alacritty
 exec /opt/alacritty/alacritty
 exec whatsdesk
 exec chromium-browser
-exec google-play-music-desktop-player
+exec youtube-music-desktop-app
 exec pulseaudio --start
 exec google-calendar
 exec notion-desktop
