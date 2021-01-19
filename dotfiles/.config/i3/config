@@ -116,7 +116,7 @@ assign [class="whatsdesk"] $ws4
 assign [class="Caprine"] $ws4
 assign [class="Slack"] $ws4
 for_window [class="Spotify"] move to workspace $ws10
-for_window [class="Google Play Music Desktop Player"] move to workspace $ws10
+for_window [class="youtube-music-desktop-app"] move to workspace $ws10
 assign [class="Outlook for Outlook.com"] $ws5
 assign [class="Gmail Desktop"] $ws5
 assign [class="Firefox"] $ws1
@@ -265,6 +265,7 @@ exec chromium-browser
 exec youtube-music-desktop-app
 exec pulseaudio --start
 exec google-calendar
+exec gmail-desktop
 exec notion-desktop
 exec parcellite
 exec emote
