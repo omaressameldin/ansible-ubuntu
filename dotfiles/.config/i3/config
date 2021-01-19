@@ -246,7 +246,8 @@ bindcode $mod+9 exec rofi -show run
 # touchpad configs
 exec_always xinput set-prop 14 313 1
 exec_always xinput set-prop 14 321 1
-exec_always --no-startup-id synclient PalmDetect=1 NaturalScrolling=1 VertScrollDelta=-113 HorizScrollDelta=-100  HorizTwoFingerScroll=2
+exec_always --no-startup-id synclient PalmDetect=1 PalmMinWidth=xx PalmMinZ=yy NaturalScrolling=1 VertScrollDelta=-113 HorizScrollDelta=-100  HorizTwoFingerScroll=2
+exec syndaemon -i 0.25 -d
 #startup applications
 exec_always feh --bg-scale ~/Pictures/repeat.jpg
 exec_always xset s off
