@@ -31,4 +31,5 @@
     - { role: slack, become: true }
     - { role: insomnia, become: true, tags: insomnia }
     - { role: caprine, become: true }
+    - { role: teams, become: true }
     - { role: i3, become: true, tags: i3 }
