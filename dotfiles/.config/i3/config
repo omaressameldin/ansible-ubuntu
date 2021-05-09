@@ -11,6 +11,12 @@
 
 set $mod Mod4
 
+# gaps settings
+gaps inner 10
+gaps outer 0
+#smart_gaps on
+
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Liga Fantasque Sans Mono 13
@@ -110,7 +116,7 @@ set $ws9 "9:  "
 set $ws10 "10:   "
 
 # classes
-assign [class="Chromium-browser"] $ws1
+assign [class="Chromium"] $ws1
 assign [class="Code"] $ws2
 assign [class="Alacritty"] $ws3
 assign [class="whatsdesk"] $ws4
@@ -123,6 +129,7 @@ assign [class="Gmail Desktop"] $ws5
 assign [class="Firefox"] $ws1
 assign [class="google-calendar"] $ws6
 assign [class="notion-desktop"] $ws7
+assign [class="Microsoft-edge-dev"] $ws1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -191,13 +198,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-set $bg-color             #181818
-set $inactive-bg-color    #2f343f70
+set $bg-color             #181818100
+set $inactive-bg-color    #252129
+#241f29 
+#231d29
 set $text-color           #f3f4f5
 set $inactive-text-color  #676E7D
 set $urgent-bg-color      #E53935
 set $bar-focused          #33998980
-set $active-bg            #33998950
+set $bar-unfocused        #00000000
+set $active-bg            #1d5c52100
 
 # window colors
 #                       border              background         text                 indicator
@@ -206,6 +216,9 @@ client.unfocused        $bg-color            $inactive-bg-color  $inactive-text-
 client.focused_inactive $bg-color            $inactive-bg-color  $inactive-text-color $bar-focused
 client.urgent           $bg-color            $urgent-bg-color    $text-color          $bar-focused
 
+for_window [class="^.*"] border pixel 3
+
+#border pixel 4
 hide_edge_borders both
 # new_window pixel 1
 # default_floating_border pixel 100
@@ -241,16 +254,27 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# External display controls
+#bindsym $mod+m exec display_con 2 1     
+#bindsym $mod+m  exec display_con 2 1 2k
+#bindsym $mod+m exec display_con 2 1 4k 
+#bindsym $mod+m+d exec display_disc
+
+
 bindcode $mod+9 exec rofi -show run
+
+# set print screen buton
+bindsym  Print exec flameshot gui
+
 
 
 # touchpad configs
 exec_always xinput set-prop 14 313 1
 exec_always xinput set-prop 14 321 1
-exec_always --no-startup-id synclient PalmDetect=1 PalmMinWidth=xx PalmMinZ=yy NaturalScrolling=1 VertScrollDelta=-113 HorizScrollDelta=-100  HorizTwoFingerScroll=2
-exec syndaemon -i 0.25 -d
+exec_always --no-startup-id synclient PalmDetect=1 PalmMinWidth=xx PalmMinZ=yy NaturalScrolling=1 VertScrollDelta=-113 HorizScrollDelta=-100  HorizTwoFingerScroll=2 MinSpeed=1.2 AccelFactor=0.03
+exec syndaemon -i 0.75 -d
 #startup applications
-exec_always feh --bg-scale ~/Pictures/repeat.jpg
+exec_always feh --bg-scale ~/.config/repeat.jpg
 exec_always xset s off
 exec_always xset -dpms
 exec_always xset s noblank
@@ -262,7 +286,7 @@ exec code
 exec /opt/alacritty/alacritty
 exec /opt/alacritty/alacritty
 exec whatsdesk
-exec chromium-browser
+exec microsoft-edge-dev
 exec youtube-music-desktop-app
 exec pulseaudio --start
 exec google-calendar
@@ -270,3 +294,4 @@ exec gmail-desktop
 exec notion-desktop
 exec parcellite
 exec emote
+exec_always screenshot
