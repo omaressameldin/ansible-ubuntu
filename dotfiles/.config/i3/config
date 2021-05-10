@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # gaps settings
-gaps inner 10
+gaps inner 15
 gaps outer 0
 #smart_gaps on
 
@@ -200,8 +200,6 @@ bindsym $mod+r mode "resize"
 
 set $bg-color             #181818100
 set $inactive-bg-color    #252129
-#241f29 
-#231d29
 set $text-color           #f3f4f5
 set $inactive-text-color  #676E7D
 set $urgent-bg-color      #E53935
@@ -217,11 +215,12 @@ client.focused_inactive $bg-color            $inactive-bg-color  $inactive-text-
 client.urgent           $bg-color            $urgent-bg-color    $text-color          $bar-focused
 
 for_window [class="^.*"] border pixel 3
-
-#border pixel 4
+for_window [class="Tilda"] border pixel 0
+for_window [class="feh"] floating enable 
+for_window [class="Zathura"] floating enable
 hide_edge_borders both
 # new_window pixel 1
-# default_floating_border pixel 100
+default_floating_border pixel 100
 
 
 bar {
@@ -281,11 +280,12 @@ exec_always xset s noblank
 exec tilda
 exec --no-startup-id dunst --config /home/omaressameldin/.config/dunst/dunstrc
 exec_always compton --config /home/omaressameldin/.config/compton.conf
-exec slack
+#exec slack
 exec code
 exec /opt/alacritty/alacritty
 exec /opt/alacritty/alacritty
 exec whatsdesk
+exec caprinee
 exec microsoft-edge-dev
 exec youtube-music-desktop-app
 exec pulseaudio --start
@@ -295,3 +295,4 @@ exec notion-desktop
 exec parcellite
 exec emote
 exec_always screenshot
+
