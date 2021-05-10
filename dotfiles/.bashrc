@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -88,8 +89,6 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # set env paths
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
 export PATH="$PATH:$HOME/flutter/bin"
 export ANDROID_HOME=/opt/android-sdk-linux
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -102,7 +101,8 @@ alias l='ls -CF'
 alias mine='sudo chown -R $USER'
 alias clip='xclip -selection clipboard'
 alias screenshot="flameshot gui"
-bind -x '"\C-k":clear && printf "\e[3J"'
+bind -x '"\C-k": "reset"'
+alias list_disks='sudo fdisk -l'
 
 # settings alias
 alias settings='env XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
@@ -113,12 +113,17 @@ alias display_available='xrandr | grep -w "connected"'
 alias display_disc='xrandr --auto'
 
 display_con() {
-  if [ -n "$3" ]; then
-    xrandr --output DP-"$1" --mode "$2" --rate 60
-  else
+  if [ "$3" == "4k" ]; then
+    echo "connecting in 4k"
+    xrandr --output DP-"$1" --mode 3840x2160 --rate 60
+  elif [ "$3" == "2k" ]; then
+    echo "connecting in 2k"
     xrandr --output DP-"$1" --mode  2560x1440 --rate 60
+  else
+    echo "connecting in 1080p"
+    xrandr --output DP-"$1" --mode 1920x1080 --rate 60
   fi
-  xrandr --output eDP-1-1 --left-of DP-"$1"
+  xrandr --output eDP-"$2" --left-of DP-"$1"
 }
 
 
@@ -181,7 +186,7 @@ else
 fi
 
 
-export PATH="/home/omaressameldin/.local/bin:/home/omaressameldin/bin:/opt/GitHub Desktop:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/omaressameldin/flutter/bin"
+export PATH="/home/omaressameldin/.local/bin:/home/omaressameldin/bin:/opt/GitHub Desktop:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/omaressameldin/flutter/bin"
 alias fnm=/home/omaressameldin/.fnm/fnm
 eval "`fnm env --multi`"
 
@@ -192,3 +197,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 alias fnm=/home/omaressameldin/.fnm/fnm
 eval "`fnm env --multi`"
 source ~/.bash_completion/alacritty
+
