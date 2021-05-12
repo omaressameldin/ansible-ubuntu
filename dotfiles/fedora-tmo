@@ -1,0 +1,115 @@
+sudo dnf copr enable dschubert/compton
+sudo dnf copr enable provessor/golang-github-gokcehan-lf
+sudo dnf install git-all cmake g++ libxcb-devel bluez-tools bison tlp openssl openssl-devel snapd flameshot fish gpick vim light tilda xclip fontawesome-fonts.noarch ffontawesome-fonts-web.noarch libatomic.x86_64 liberation-fonts compton gimp rofi1 i3lock tldr golang-github-gokcehan-lf xinput.x86_64 xorg-x11-drv-synaptics-legacy protobuf.x86_64 clang.x86_64
+
+sudo yum install fontconfig freetype freetype-devel fontconfig-devel libstdc++ xcb-util-devel postgresql.x86_64 ImageMagick ImageMagick-devel ImageMagick-perl
+sudo yum groupinstall 'Development Tools'
+systemctl start snapd.seeded.service
+chsh -s `which fish`
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo sh
+sudo mv /root/.cargo ~/.cargo
+sudp chown -R $USER ~/.cargo
+set -u fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -u fish_user_paths /snap/bin $fish_user_paths
+sudo dnf remove docker \
+                docker-client \
+                docker-client-latest \
+                docker-common \
+                docker-latest \
+                docker-latest-logrotate \
+                docker-logrotate \
+                docker-selinux \
+                docker-engine-selinux \
+                docker-engine
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager \
+--add-repo \
+https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo gpasswd -a $USER docker
+newgrp docker
+
+#install go
+curl -sSL https://git.io/g-install | sh -s
+g install 1.16.4
+
+
+
+#install wifi-manager
+wget https://github.com/omaressameldin/wifi-manager/releases/download/1.0/wifi-manager
+mkdir -p ~/.wifi-manager/bin
+mv wifi-manager ~/.wifi-manager/bin/.
+chmod +x ~/.wifi-manager/bin
+set -u fish_user_paths $HOME/.wifi-manager/bin $fish_user_paths
+
+# install flutter
+sudo snap install flutter
+flutter sdk-path
+sudo snap install androidsdk
+androidsdk 'platforms;android-30' 'platform-tools' 'build-tools;30.0.2'
+nano /etc/selinux/config # set selinux = disabled
+sudo dnf install java-1.8.0-openjdk.x86_64
+flutter doctor --android-licenses
+
+# install vscode
+https://code.visualstudio.com/download
+sudo rpm -i ~/Downloads/code
+
+# install fnm
+curl -fsSL https://fnm.vercel.app/install | bash
+fnm install v16.1.0
+npm install --global yarn
+
+sudo snap install vlc youtube-musci-desktop-app whatsdesk insomnia caprine emote
+sudo snap install slack --classic
+
+# microsoft edge
+download through google
+sudo rpm -i version
+
+# teams
+downlaod through google
+sudo rpm -i
+
+#install i3-lock-fancy
+git clone https://github.com/meskarune/i3lock-fancy.git
+cd i3lock-fancy
+sudo make install8
+
+#install i3 gaps
+sudo dnf remove i3
+sudo dnf copr enable fuhrmann/i3-gaps
+sudo dnf install i3-gaps
+
+# install nerd fonts
+git clone https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+sudo ./install.sh
+
+# install fantasque fontawesome
+https://github.com/belluzj/fantasque-sans/releases/tag/v1.8.0
+cp ttf /ur/share/fonts/fantasque
+
+
+cargo install alacritty
+cargo install starship
+cargo install bat
+cargo install ripgrep8
+
+# ~/.config/fish/fish.config
+starship init fish | source
+
+config files
+# ~/.config/alacritty/alacritty.yml
+#~/.config/compton/compton.conf
+#~/.config/rofi/config -> adjust theme link
+#~/.config/rofi/theme.rasi
+#~/.config/tilda/config_0
+#~/.config/tilda/config_1
+#~/.config/tilda/style.css
+
+
+
+mkdir -p ~/.config && touch ~/.config/starship.toml
+#starship config
+
