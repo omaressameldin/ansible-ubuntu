@@ -1,6 +1,6 @@
 sudo dnf copr enable dschubert/compton
 sudo dnf copr enable provessor/golang-github-gokcehan-lf
-sudo dnf install git-all cmake g++ libxcb-devel bluez-tools bison tlp openssl openssl-devel snapd flameshot fish gpick vim light tilda xclip fontawesome-fonts.noarch ffontawesome-fonts-web.noarch libatomic.x86_64 liberation-fonts compton gimp rofi1 i3lock tldr golang-github-gokcehan-lf xinput.x86_64 xorg-x11-drv-synaptics-legacy protobuf.x86_64 clang.x86_64
+sudo dnf install git-all cmake g++ libxcb-devel bluez-tools bison tlp openssl openssl-devel snapd flameshot fish gpick vim light tilda xclip fontawesome-fonts.noarch ffontawesome-fonts-web.noarch libatomic.x86_64 liberation-fonts compton gimp rofi1 i3lock tldr golang-github-gokcehan-lf xinput.x86_64 xorg-x11-drv-synaptics-legacy protobuf.x86_64 clang.x86_64 parcellite gnome-tweaks lxappearance.x86_64 xrandr.x86_64 polybar
 
 sudo yum install fontconfig freetype freetype-devel fontconfig-devel libstdc++ xcb-util-devel postgresql.x86_64 ImageMagick ImageMagick-devel ImageMagick-perl
 sudo yum groupinstall 'Development Tools'
